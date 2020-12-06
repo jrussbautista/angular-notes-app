@@ -1,0 +1,12 @@
+.note-card {
+  margin-bottom: 20px;
+}
+
+.note-card-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right button:not(:last-child) {
+  margin-right: 10px;
+}

@@ -1,0 +1,16 @@
+<mat-card class="note-card">
+  <div class="note-card-body">
+    <div>
+      <h2>{{ note.title }}</h2>
+      <p>{{ note.description }}</p>
+    </div>
+    <div class="right">
+      <button mat-fab color="primary" aria-label="delete">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-fab color="accent" aria-label="delete" (click)="onRemove()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-card>

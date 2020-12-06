@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>List of Notes</h1>
+  <div *ngIf="notes.length === 0; else noteList">You don't have notes yet</div>
+  <ng-template #noteList>
+    <ul>
+      <li *ngFor="let note of notes">
+        <app-note-detail
+          [note]="note"
+          (remove)="deleteNote(note)"
+        ></app-note-detail>
+      </li>
+    </ul>
+  </ng-template>
+</div>
