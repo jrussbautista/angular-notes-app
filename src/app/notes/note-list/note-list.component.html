@@ -6,7 +6,8 @@
       <li *ngFor="let note of notes">
         <app-note-detail
           [note]="note"
-          (remove)="deleteNote(note)"
+          (view)="handleViewNote(note)"
+          (remove)="handleRemoveNote(note)"
         ></app-note-detail>
       </li>
     </ul>

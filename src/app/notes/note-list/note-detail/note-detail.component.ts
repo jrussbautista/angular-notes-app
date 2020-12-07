@@ -9,7 +9,8 @@ import { Note } from '../../shared/notes.model';
 export class NoteDetailComponent implements OnInit {
   @Input() note: Note;
 
-  @Output() remove: EventEmitter<any> = new EventEmitter();
+  @Output() remove: EventEmitter<Note> = new EventEmitter();
+  @Output() view: EventEmitter<Note> = new EventEmitter();
 
   constructor() {}
 
@@ -17,5 +18,9 @@ export class NoteDetailComponent implements OnInit {
 
   onRemove() {
     this.remove.emit(this.note);
+  }
+
+  onView() {
+    this.view.emit(this.note);
   }
 }

@@ -1,0 +1,26 @@
+.top-container {
+  margin: 20px 0;
+}
+
+.container {
+  margin-top: 40px;
+  max-width: 600px;
+}
+
+.edit-form-container {
+  width: 100%;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.form-buttons button:not(:last-child) {
+  margin-right: 15px;
+}
