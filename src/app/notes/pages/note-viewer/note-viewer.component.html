@@ -1,1 +1,7 @@
-<p>note-viewer works!</p>
+<div class="container">
+  <h1 class="heading">Edit Note</h1>
+  <app-note-form
+    [note]="note"
+    (onSubmit)="handleSubmit($event)"
+  ></app-note-form>
+</div>

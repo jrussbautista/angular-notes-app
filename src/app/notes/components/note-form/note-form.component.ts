@@ -16,6 +16,7 @@ export class NoteFormComponent implements OnInit {
   ngOnInit(): void {}
 
   handleSubmit(note: Note, isValid: boolean | null) {
+    console.log(isValid);
     if (isValid) {
       this.onSubmit.emit(note);
     }
