@@ -17,6 +17,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -30,7 +31,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
@@ -39,6 +39,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MatToolbarModule,
     MatIconModule,
     NotesModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

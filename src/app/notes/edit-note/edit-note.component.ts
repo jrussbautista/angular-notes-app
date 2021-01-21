@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { NoteService } from '../shared/note.service';
+import { NoteService } from '../note.service';
 import { Observable } from 'rxjs';
-import { Note } from '../shared/notes.model';
+import { Note } from '../models/notes.model';
 
 @Component({
   selector: 'app-edit-note',
@@ -19,13 +19,27 @@ export class EditNoteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const noteId = this.route.snapshot.paramMap.get('id');
-    this.getNote(noteId as string);
+    const id = this.route.snapshot.paramMap.get('id');
+    this.getNote(id as string);
   }
 
-  getNote(noteId: string): void {
-    this.noteService.getNoteById(noteId).subscribe((result) => {
+  getNote(id: string): void {
+    this.noteService.getNoteById(id).subscribe((result) => {
       this.note = result;
+    });
+  }
+
+  handleSubmit(note: Note, isValid: boolean | null) {
+    if (isValid) {
+      this.updateNote(note);
+    }
+  }
+
+  updateNote(note: Note) {
+    this.noteService.updateNote(this.note.id, note).subscribe((data: Note) => {
+      this.note = Object.assign({}, this.note, data);
+      alert('Successfully updated note');
+      this.goBack();
     });
   }
 

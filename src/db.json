@@ -2,13 +2,13 @@
   "notes": [
     {
       "id": "1",
-      "description": "task 1",
-      "isDone": false
+      "title": "title 1",
+      "description": "task 1"
     },
     {
       "id": "2",
-      "description": "task 2",
-      "isDone": true
+      "title": "title 2",
+      "description": "task 2"
     }
   ]
 }

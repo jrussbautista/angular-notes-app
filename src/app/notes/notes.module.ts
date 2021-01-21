@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { NoteListComponent } from './note-list/note-list.component';
-import { NoteDetailComponent } from './note-list/note-detail/note-detail.component';
+import { FormsModule } from '@angular/forms';
 
 import { NotesRoutingModule } from './notes-routing.module';
 
@@ -13,13 +12,22 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 
-import { EditNoteComponent } from './edit-note/edit-note.component';
+import { NoteDashboardComponent } from './pages/note-dashboard/note-dashboard.component';
+import { NoteViewerComponent } from './pages/note-viewer/note-viewer.component';
+import { NoteFormComponent } from './components/note-form/note-form.component';
+import { NoteDetailComponent } from './components/note-detail/note-detail.component';
 
 @NgModule({
-  declarations: [NoteListComponent, NoteDetailComponent, EditNoteComponent],
+  declarations: [
+    NoteDashboardComponent,
+    NoteViewerComponent,
+    NoteFormComponent,
+    NoteDetailComponent,
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
+    FormsModule,
     NotesRoutingModule,
     MatCardModule,
     MatIconModule,
@@ -28,6 +36,6 @@ import { EditNoteComponent } from './edit-note/edit-note.component';
     MatSelectModule,
     MatInputModule,
   ],
-  exports: [NoteListComponent],
+  exports: [NoteDashboardComponent],
 })
 export class NotesModule {}

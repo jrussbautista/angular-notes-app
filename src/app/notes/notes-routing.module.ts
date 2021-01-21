@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { NoteListComponent } from './note-list/note-list.component';
-import { EditNoteComponent } from './edit-note/edit-note.component';
+import { NoteDashboardComponent } from './pages/note-dashboard/note-dashboard.component';
+import { NoteViewerComponent } from './pages/note-viewer/note-viewer.component';
 
 const routes: Routes = [
   {
@@ -9,12 +9,12 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: NoteListComponent,
+        component: NoteDashboardComponent,
         pathMatch: 'full',
       },
       {
         path: ':id',
-        component: EditNoteComponent,
+        component: NoteViewerComponent,
       },
     ],
   },

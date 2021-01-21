@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>List of Notes</h1>
+  <app-note-form (onSubmit)="handleAddNote($event)"></app-note-form>
   <div *ngIf="notes.length === 0; else noteList">You don't have notes yet</div>
   <ng-template #noteList>
     <ul>

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Note } from '../shared/notes.model';
-import { NoteService } from '../shared/note.service';
 import { Router } from '@angular/router';
+import { NoteService } from '../../note.service';
+import { Note } from '../../models/notes.model';
 
 @Component({
-  selector: 'app-note-list',
-  templateUrl: './note-list.component.html',
-  styleUrls: ['./note-list.component.css'],
+  selector: 'app-note-dashboard',
+  templateUrl: './note-dashboard.component.html',
+  styleUrls: ['./note-dashboard.component.css'],
 })
-export class NoteListComponent implements OnInit {
+export class NoteDashboardComponent implements OnInit {
   notes: Note[] = [];
   isLoadingNotes: boolean = true;
 
@@ -21,14 +21,21 @@ export class NoteListComponent implements OnInit {
   getNotes(): void {
     this.isLoadingNotes = true;
     this.noteService.getNotes().subscribe((results) => {
-      console.log(results);
       this.notes = results;
       this.isLoadingNotes = false;
     });
   }
 
+  handleAddNote(note: Note): void {
+    this.noteService.addNote(note).subscribe((data: Note) => {
+      this.notes = [data, ...this.notes];
+    });
+  }
+
   handleRemoveNote(selectedNote: Note): void {
-    this.notes = this.notes.filter((note) => note.id !== selectedNote.id);
+    this.noteService.deleteNote(selectedNote.id).subscribe(() => {
+      this.notes = this.notes.filter((note) => note.id !== selectedNote.id);
+    });
   }
 
   handleViewNote(selectedNote: Note): void {

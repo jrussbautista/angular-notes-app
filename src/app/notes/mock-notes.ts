@@ -1,4 +1,4 @@
-import { Note } from './shared/notes.model';
+import { Note } from './models/notes.model';
 
 export const NOTES: Note[] = [
   {

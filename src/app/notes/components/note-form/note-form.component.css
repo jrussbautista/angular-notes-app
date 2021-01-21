@@ -1,0 +1,13 @@
+.form-container {
+  margin: 30px 0;
+}
+
+.form-container,
+.input-field {
+  width: 100%;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
